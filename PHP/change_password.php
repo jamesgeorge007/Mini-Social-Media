@@ -1,0 +1,24 @@
+<?php
+session_start();
+if(@$_SESSION['user']!='')
+{
+  $new=$_POST['new_password'];
+  $confirm=$_POST['confirm_password'];
+  if($new!=$confirm)
+  {
+    header('location:../HTML/wrong_change_password.html');
+  }
+  else
+   {
+   $conn=mysqli_connect("localhost","root","","login");
+   $query="UPDATE credentials SET password='$new' WHERE username='".$_SESSION['user']."'";
+   mysqli_query($conn,$query);
+   mysqli_close($conn);
+   header('location:profile.php');
+   }
+}
+else
+{
+  header('location:profile.php');
+}
+ ?>
