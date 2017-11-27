@@ -1,0 +1,132 @@
+html,body
+{
+  margin:0;
+  padding:0;
+}
+body
+{
+  background:linear-gradient(lime,skyblue,limegreen);
+}
+#heading
+{
+  text-align:center;
+  font-size:40px;
+  color:rgba(-175,50,225,0.7);
+  width:525px;
+  margin:15px auto;
+  padding:2px;
+  border:solid maroon;
+  border-width: medium;
+  background-color:pink;
+  border-radius:18px;
+  animation-duration:1s;
+  animation-name:colour;
+  animation-iteration-count: infinite;
+}
+@keyframes colour
+{
+  from
+  {
+   color:red;
+  }
+  30%
+  {
+    color: green;
+  }
+  60%
+  {
+    color: blue;
+  }
+  90%
+  {
+    color: maroon;
+  }
+}
+button[type="button"]
+{
+  text-align: center;
+  background-color:green;
+  color:white;
+  padding:16px;
+  font-size:28px;
+  border-radius:8px;
+  border:3px solid white;
+}
+button[type="button"]:hover
+{
+  -webkit-transition-duration:0.4s;
+  background-color: white;
+  color:green;
+  text-transform: uppercase;
+  border:3px solid green;
+  cursor:pointer;
+}
+button[type="button"]:focus
+{
+  -webkit-transition-duration:0.4s;
+  -webkit-transform:translateY(3px);
+}
+#form
+{
+  text-align: center;
+  font-size:34px;
+  width:30%;
+  height:600px;
+  margin:70px auto;
+  padding:10px;
+  border:3px dotted black;
+}
+form>input
+{
+  font-size:32px;
+  padding:4px;
+  border-radius:10px;
+  border-width:thin;
+}
+form>input:focus
+{
+  -webkit-transition-duration:0.4s;
+  border-radius:0px;
+  border-width:thick;
+  border-color:darkorange;
+}
+form>button
+{
+  font-size: 34px;
+  padding:12px;
+  color:white;
+}
+form>button[type="submit"]
+{
+  float:left;
+  background-color:rgba(-200,-25,150,0.8);
+}
+form>button[type="reset"]
+{
+  float:right;
+  background-color:rgba(250,-25,-200,0.8);
+}
+form>button[type="submit"]:hover
+{
+-webkit-transition-duration:0.4s;
+  background-color:darkgreen;
+  border-radius:25px;
+}
+form>button[type="reset"]:hover
+{
+  -webkit-transition-duration:0.4s;
+  background-color:darkgreen;
+  border-radius:25px;
+}
+form>button:focus
+{
+  -webkit-transition-duration:0.4s;
+  -webkit-transform:translateY(6px);
+}
+@media(max-width:1068px)
+{
+  #form
+  {
+    width:60%;
+  }
+}
