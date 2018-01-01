@@ -1,0 +1,81 @@
+html,body
+{
+  padding:0;
+  margin:0;
+}
+body
+{
+  background-color:#fff;
+}
+div.collapse
+{
+  display:inline-block;
+  background-color: maroon;
+  padding:5px;
+  color:white;
+}
+div.collapse>form>button
+{
+  padding:5px;
+}
+div.collapse>form>input
+{
+  padding:5px;
+}
+.jumbotron
+{
+  height:100%;
+  padding:10px;
+  margin-top:-120px;
+}
+#post
+{
+  text-align: left;
+  border:5px solid maroon;
+  border-radius:8px;
+  height:380px;
+  width:90%;
+  margin:-50 auto;
+  padding:30px;
+}
+form#opinion>textarea
+{
+  border-radius:12px;
+  width:350px;
+  padding:12px;
+  font-size:24px;
+}
+form#opinion>textarea:focus
+{
+  -webkit-transition-duration:1s;
+  border-radius:16px;
+  width:100%;
+  border-width: medium;
+  border-color:limegreen;
+}
+form#opinion>input
+{
+  padding:18px;
+  font-size:20px;
+  border-radius:4px;
+}
+form#opinion>input:focus
+{
+  -webkit-transition-duration:0.4s;
+ border-width:medium;
+ border-color:limegreen;
+}
+form#opinion>button[type='submit']
+{
+  padding:10px;
+  font-size:30px;
+}
+form#opinion>button[type='reset']
+{
+  padding:10px;
+  font-size:30px;
+}
+form#opinion>button:hover
+{
+  cursor:pointer;
+}
