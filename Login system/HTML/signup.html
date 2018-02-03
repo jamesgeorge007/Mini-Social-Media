@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <link rel="stylesheet" href="../css/signup.css">
     <meta charset="utf-8">
     <title>Sign Up!</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <h1 id="heading"><u>Sign Up Form</u></h1>
     <br>
-    <h2 id="info"><marquee scrollamount="8" onmouseover="this.stop()" onmouseleave="this.start()">Fill in these details please :)</marquee></h2>
-    <div id="signup">
-    <form action="../PHP/signup.php" method="post">
-      First Name:<input type="text" name="firstname" autofocus required>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      Last Name:<input type="text" name="lastname" value="" required>
-      <br><br>
-      E-mail:<input type="email" name="email" required>
-      <br><br>
-      &nbsp;&nbsp;&nbsp;
-      Username:<input type="text" name="username" required>
-      <br><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      New Password:<input type="password" name="new_password"required>
-      <br><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      Confirm Password:<input type="password" name="confirm_password">
-      <br><br>
-      &nbsp;&nbsp;&nbsp;
-      Date Of Birth:<input type="date" name="dob" required>
-      <br><br>
-      <button type="submit" name="submit">Create Account</button>
-      <button type="reset" name="reset">Reset</button>
-    </form>
-  </div>
-  </body>
+    <!-- <h2 id="info">
+        <marquee scrollamount="8" onmouseover="this.stop()" onmouseleave="this.start()">Fill in these details please :)</marquee>
+    </h2> -->
+    <div id="sign-up">
+        <form action="../PHP/signup.php" method="post">
+            <!-- First Name:<input type="text" name="firstname" autofocus required> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name:<input type="text" name="lastname" value="" required> -->
+
+            <label for="e-mail"> E-mail: </label>
+            <br>
+            <input type="email" name="email" required>
+            <br><br>
+            <label for="username"> Username: </label>
+            <br>
+            <input type="text" name="username" required>
+            <br><br>
+            <label for="new_password">New Password:</label>
+            <br>
+            <input type="password" name="new_password" required>
+            <br><br>
+            <label for="confirm_password">Confirm Password:</label>
+            <br>
+            <input type="password" name="confirm_password">
+            <!-- <br><br> &nbsp;&nbsp;&nbsp; Date Of Birth:<input type="date" name="dob" required> -->
+            <br><br>
+            <button type="submit" name="submit">Sign Up</button>
+            <button type="reset" name="reset">Reset</button>
+        </form>
+    </div>
+</body>
+
 </html>

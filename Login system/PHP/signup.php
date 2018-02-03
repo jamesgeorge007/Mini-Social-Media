@@ -10,8 +10,6 @@ if($password!=$confirm_password)
   header('signup.php');
 }
 $conn=mysqli_connect("localhost","root","","login");
-$create="";
-$table=mysqli_query($create);
 $select="INSERT INTO credentials VALUES('".$username."','".$password."','".$firstname."','".$lastname."','".$email."','".$firstname.' '.$lastname."')";
 $query=mysqli_query($conn,$select);
 mysqli_close($conn);
