@@ -33,7 +33,7 @@ This is a basic social media web app where the users can create their accounts c
  
  # Still to be implemented
  
- <ul type="circle">
+ <ul type="disc">
   
   <li> Notifications. </li>
   <li> Followers. </li>
