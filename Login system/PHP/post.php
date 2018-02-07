@@ -9,12 +9,17 @@ if(@$_SESSION['user']!='')
   $body = @$_POST['body'];
 
 
-  $conn=mysqli_connect("localhost","root","","login");
-  $query="INSERT INTO posts VALUES ('".$title."', '".$body."', '".$user."')";
+  $conn = mysqli_connect("localhost","root","","login");
+  $name_query = "SELECT fullname FROM credentials WHERE username='".@$_SESSION['user']."' ";
+  $result = mysqli_query($conn, $name_query);  
+  $name = mysqli_fetch_array($result);
+  $query="INSERT INTO posts VALUES ('".$title."', '".$body."', '".$user."', '".$name[0]."')";
   mysqli_query($conn, $query);
   mysqli_close($conn);
 
-  echo "<h1><center>Successfully posted!</center></h1>";
+  @$_SESSION['successful_post'] = true;
+
+ header('location: profile.php');
 }
 else
  {

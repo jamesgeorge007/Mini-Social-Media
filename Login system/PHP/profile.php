@@ -63,7 +63,11 @@ echo "</div>";
 
 
 
-
+if(@$_SESSION['successful_post'])
+{
+  echo "<script>alert('Successfully posted!!');</script>";
+  @$_SESSION['successful_post'] = false;
+}
 
 
 
@@ -89,19 +93,24 @@ echo "<div id='post'>";
    echo "<textarea rows='3' name='body' placeholder='What is in your mind?'></textarea>";
    echo "<br><br><button class='btn btn-outline-success' type='submit'>Post</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class='btn btn-outline-info' type='reset'>Reset</button></form>";
    echo "</div>";
-   echo "</div>";
-
 
 
 // Displaying the posts one by one.
 
+echo "<h1 id='posts_title'> Posts </h1>";
 
 
 while($record = mysqli_fetch_assoc($query3))
 {
+  echo "<div id='fetch_posts'>";
+  echo "<h3>". $record['fullname']." </h3>";
   echo "<h2>".$record['title']."</h2>";
   echo "<p>".$record['body']."</p>";
+  echo "</div>";
 }
+
+
+echo "</div>";
   }
   else
  {
