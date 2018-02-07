@@ -7,14 +7,17 @@ This is a basic social media web app where the users can create their accounts c
 </p>
 
 # Instructions
+<ol>
+ 
+<li> Clone this repository </li>
+<li> Make sure you have any local server installed on your system like WAMP, LAMPP, XAMPP or MAMP based on your Operating System which comes up with an Apache server and MySQL. </li>
+<li> Ensure that you are placing these files in the www directory within the wamp folder if you're using WAMP and the required path in all other cases. </li>
+<li> Turn on the services and navigate to 127.0.0.1 (localhost)/your_directory_name/file_name.
+<li> You are required to create 2 tables one for storing the user details and the other for the posts manually in the Structured Query Language (SQL). </li>
+<li> Just signup and login with the credentials, you can see your profile page dynamically created. </li>
+<li> Don't forget to star this repository. </li>
 
-Step 1. Clone this repository
-Step 2. Make sure you have any local server installed on your system like WAMP, LAMPP, XAMPP or MAMP based on your Operating System which comes up with an Apache server and MySQL.
-Step 3. Ensure that you are placing these files in the www directory within the wamp folder if you're using WAMP and the required path in all other cases. 
-Step 4. Turn on the services and navigate to 127.0.0.1 (localhost)/your_directory_name/file_name.
-Step 5. You are required to create 2 tables one for storing the user details and the other for the posts manually in the Structured Query Language (SQL).
-Step 6. Just signup and login with the credentials, you can see your profile page dynamically created.
-Step 7. Don't forget to star this repository.
+</ol>
 
 # Implemented features
 
