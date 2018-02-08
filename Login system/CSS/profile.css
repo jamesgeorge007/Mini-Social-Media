@@ -106,17 +106,23 @@ form#opinion>button:hover {
 #fetch_posts>p {
     padding: 10px;
     font-family: monospace;
+    background-color: rgb(192, 192, 192);
     font-size: 30px;
     text-align: initial;
 }
 
 #fetch_posts>h3 {
-    text-align: initial;
+    text-align: center;
+    font-family: 'Helevetica';
+    margin-bottom: 40px;
+    font-size: 35px;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 25%;
 }
 
 #posts_title {
     text-align: center;
-    margin-top: 80px;
     color: #192;
     font-family: 'arial';
     font-size: 85px;

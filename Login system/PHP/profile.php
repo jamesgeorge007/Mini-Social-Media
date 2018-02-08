@@ -93,12 +93,15 @@ echo "<div id='post'>";
    echo "<textarea rows='3' name='body' placeholder='What is in your mind?'></textarea>";
    echo "<br><br><button class='btn btn-outline-success' type='submit'>Post</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class='btn btn-outline-info' type='reset'>Reset</button></form>";
    echo "</div>";
+   echo "</div>";
 
 
 // Displaying the posts one by one.
 
 echo "<h1 id='posts_title'> Posts </h1>";
 
+if(mysqli_num_rows($query3)==0)
+  echo "<br><center><h2>No posts yet.</h2></center>";
 
 while($record = mysqli_fetch_assoc($query3))
 {
