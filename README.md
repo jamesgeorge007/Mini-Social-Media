@@ -19,7 +19,7 @@ This is a basic social media web app where the users can create their accounts c
 
 </ol>
 
-** Databse Schema **
+**Database Schema**
 
 <img src='https://github.com/jamesgeorge007/Mini-Social-Media-Web-Application-Backed-Up-By-PHP/blob/master/Login%20system/Assets/Database%20Schema/DB.JPG'>
 
