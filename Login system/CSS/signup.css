@@ -1,148 +1,70 @@
-html,body
-{
-  margin:0;
-  padding:0;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    background-color: rgb(38, 231, 222);
 }
 
-body
-{
-background:linear-gradient(rgba(225,20,10,0.4),rgba(50,255,75,0.6),rgba(220,125,35,0.7));
+#heading {
+    text-align: center;
+    font-family: 'cursive';
+    font-size: 5.2em;
+    color: forestgreen;
+    text-decoration: underline;
+    text-shadow: 4px 2px #fff;
 }
 
-#heading,#info
-{
-  text-align: center;
+#sign-up {
+    padding: 20px;
+    width: 40%;
+    height: 40%;
+    margin: 20px auto;
+    background-color: rgba(211, 211, 211, 0.5);
+    border: 4px solid limegreen;
+    border-radius: 8px;
 }
-#heading
-{
- font-size:60px;
- font-family:serif;
- color:maroon;
- text-decoration:overline;
- background-color:silver;
- width:500px;
- margin:0 auto;
- margin-top:75px;
- padding:15px;
- border:3px solid blue;
- border-width:thick;
- border-radius:20px;
- animation-name:animate;
- animation-duration:1.5s;
- animation-iteration-count: infinite;
-}
-@keyframes animate
-{
-  10%
-  {
-    color:blue;
-    border-color:lime;
-  }
-  20%
-  {
-    color:darkviolet;
-    border-color:red;
-    border-style: double;
-  }
-  40%
-  {
-    color:olive;
-    border-color:darkorange;
-    border-style:dashed;
-  }
-  60%
-  {
-    color:limegreen;
-    border-color:forestgreen;
-  }
-  100%
-  {
-    color:maroon;
-    border-color:blue;
-  }
 
+#sign-up:hover {
+    -webkit-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    box-shadow: 6px 6px rgba(211, 211, 211, 0.7);
+    background-color: rgba(217, 217, 217, 0.8);
+    border: 4px dashed forestgreen;
 }
-#info
-{
-  font-size:40px;
-  font-family:sans-serif;
-  color:darkblue;
-  background-color:yellow;
-  padding:5px;
-  border:5px solid purple;
-  border-radius:8px;
-  width:75%;
-  margin:0 auto;
-  margin-top:80px;
+
+#sign-up>form {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
 }
-#signup
-{
-  text-align: center;
-  margin:0 auto;
-  margin-top:100px;
-  border:5px solid darkred;
-  padding:30px;
-  height:660px;;
-  width:1200px;
-  font-size:40px;
-  color:purple;
+
+#sign-up>form>input {
+    font-size: 26px;
+    border-width: thin;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 8px;
+    border-width: thin;
 }
-form>input
-{
-  font-size:30px;
-  padding:5px;
-  border-width:medium;
-  border-color:forestgreen;
-  border-radius:8px;
+
+#sign-up>form>button {
+    padding: 5px;
+    font-size: 25px;
+    background-color: #293;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    width: 71%;
+    margin-top: 15px;
 }
-form>button
-{
-  font-size:40px;
-  padding:20px;
-}
-form>button[type="submit"]
-{
-  background-color:green;
-  color:white;
-  border-width:medium;
-  border-color:white;
-  float:left;
-}
-form>button[type="reset"]
-{
-  background-color:green;
-  color:white;
-  border-width:medium;
-  border-color:white;
-  float:right;
-}
-form>input:focus
-{
-  -webkit-transition-duration:0.4s;
-  border:5px solid blue;
-}
-form>button[type="submit"]:hover
-{
-  -webkit-transition-duration:0.4s;
-  background-color:rgb(15,10,185);
-  border-width:thick;
-  border-radius:30px;
-  text-transform: uppercase;
-  border-color:yellow;
-  cursor:pointer;
-}
-form>button[type="reset"]:hover
-{
-  -webkit-transition-duration:0.4s;
-  background-color: maroon;
-  border-width:thick;
-  border-color:yellow;
-  text-transform: uppercase;
-  border-radius:30px;
-  cursor:pointer;
-}
-form>button:focus
-{
-  -webkit-transition-duration:0.4s;
-  -webkit-transform:rotateY(1800deg);
+
+#sign-up>form>button:hover {
+    transition-duration: 0.7s;
+    color: #293;
+    background-color: #fff;
+    border: 2px solid #293;
+    cursor: pointer;
 }
