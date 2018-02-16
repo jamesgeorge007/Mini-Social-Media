@@ -23,7 +23,7 @@ This is a basic social media web app where the users can create their accounts c
 
 <img src='https://github.com/jamesgeorge007/Mini-Social-Media-Web-Application-Backed-Up-By-PHP/blob/master/Login%20system/Assets/Database%20Schema/DB.JPG'>
 
-# Implemented features
+**Implemented features**
 
 <ul type="square">
  
@@ -35,7 +35,7 @@ This is a basic social media web app where the users can create their accounts c
  
  </ul>
  
- # Still to be implemented
+ **Still to be implemented**
  
  <ul type="disc">
   
@@ -44,6 +44,6 @@ This is a basic social media web app where the users can create their accounts c
   <li> Reasearching... </li>
   </ul>
 
-# Status
+**Status**
 
 Development stage.
