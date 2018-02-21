@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="stylesheets//login.css">
+    <link rel="stylesheet" href="stylesheets/animate.css">
+    <meta charset="utf-8">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <h1 id="heading" class="animated bounceIn">Sign In</h1>
+    <div id="login" class="animated zoomIn">
+        <form action="server/login.php" method="post">
+            <input type="text" name="username" placeholder="Username">
+            <br><br>
+            <input type="password" name="password" placeholder="Password">
+            <br><br>
+            <button type="submit" name="button">Login</button>
+        </form>
+    </div>
+    <br><br>
+    <center>
+        <div id="sentence" class="animated infinite pulse">Don't have an account? sign up here!</div>
+        <br><br>
+        <a href="html/signup.html"><button type="button" id="sign-up-button" class="animated slideInUp">Sign Up!</button></a>
+    </center>
+</body>
+
+</html>
