@@ -95,15 +95,15 @@ form>button:hover {
     border-radius: 8px;
     background-color: #293;
     color: #fff;
-    border: 3px solid #293;
+    border: 3px solid #fff;
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 }
 
 #sign-up-button:hover {
-    transition-duration: 0.4s;
     text-decoration: none;
     cursor: pointer;
     background-color: #fff;
     color: #293;
-    border-color: #fff;
+    border-color: #293;
 }
