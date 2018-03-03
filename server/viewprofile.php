@@ -25,15 +25,15 @@ while($record = mysqli_fetch_array($query))
     echo "<div id='user-details'>";
 
 echo "<form method='post' action='update.php'>";
-echo "<h1>Firstname:</h1>  <input type='text' name='firstname' id='input' placeholder ='{$record['firstname']}' ><br><br>";
-echo "<h1>Lastname:</h1> <input type='text' name='lastname' placeholder ='{$record['lastname']}'><br><br>";
-echo "<h1>Username:</h1> <input type='text' name='username' placeholder ='{$record['username']}'><br><br>";
-echo "<h1>E-mail:</h1> <input type='email' name='email' placeholder ='{$record['email']}'>";
+echo "<h1>Firstname:</h1>  <input type='text' name='firstname' disabled id='firstName' value ='{$record['firstname']}' ><br><br>";
+echo "<h1>Lastname:</h1> <input type='text' name='lastname'disabled id='lastName' value ='{$record['lastname']}'><br><br>";
+echo "<h1>Username:</h1> <input type='text' name='username' disabled value ='{$record['username']}'><br><br>";
+echo "<h1>E-mail:</h1> <input type='email' name='email' disabled value ='{$record['email']}'>";
 
 echo "<br><br><button type='submit' id='updateBtn'> Update </button>";
 echo "<button type='button' id='cancelBtn'> Cancel </button>";
 
-// echo "<button type='button' id='editBtn'> Edit </button>"; 
+echo "<button type='button' id='editBtn'> Edit </button>"; 
 
 echo "</form>";
 
@@ -67,6 +67,6 @@ mysqli_close($conn);
  ?>
       <script src="../JS/jquery.js"></script>
      <script src="../JS/bootstrap.min.js"></script>
-      <!-- <script src="../JS/view_profile.js"></script> -->
+      <script src="../JS/viewProfile.js"></script> 
  </body>
  </html>

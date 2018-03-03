@@ -10,7 +10,7 @@ if(@$_SESSION['user']!='')
 
 
   $conn = mysqli_connect("localhost","root","","login");
-  $name_query = "SELECT fullname FROM credentials WHERE username='".@$_SESSION['user']."' ";
+  $name_query = "SELECT fullname FROM credentials WHERE username='".$_SESSION['user']."' ";
   $result = mysqli_query($conn, $name_query);  
   $name = mysqli_fetch_array($result);
   $query="INSERT INTO posts VALUES ('".$title."', '".$body."', '".$user."', '".$name[0]."')";
