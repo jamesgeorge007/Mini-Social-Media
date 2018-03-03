@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <head>
 
+
     <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheets/viewprofile.css">
-    <script src="../JS/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
@@ -15,7 +15,7 @@ $conn=mysqli_connect("localhost","root","","login");
 $select = "SELECT * FROM credentials WHERE username='".$_SESSION['user']."'";
 $query=mysqli_query($conn, $select);
 
-$posts = "SELECT title, body FROM posts WHERE username='".@$_SESSION['user']."'";
+$posts = "SELECT title, body FROM posts WHERE username='".$_SESSION['user']."'";
 $posts_query = mysqli_query($conn, $posts);
 
 echo "<h1 style='text-align:center; text-decoration:underline;'>Your Profile</h1> <br><br>";
@@ -25,11 +25,16 @@ while($record = mysqli_fetch_array($query))
     echo "<div id='user-details'>";
 
 echo "<form method='post' action='update.php'>";
-echo "<h1>Firstname:</h1>  <input type='text' name='firstname' value='{$record['firstname']}'><br><br>";
-echo "<h1>Lastname:</h1> <input type='text' name='lastname' value='{$record['lastname']}'><br><br>";
-echo "<h1>Username:</h1> <input type='text' name='username' value='{$record['username']}'><br><br>";
-echo "<h1>E-mail:</h1> <input type='email' name='email' value='{$record['email']}'>";
-echo "<br><br><button type='submit'> Update Profile </button>";
+echo "<h1>Firstname:</h1>  <input type='text' name='firstname' id='input' placeholder ='{$record['firstname']}' ><br><br>";
+echo "<h1>Lastname:</h1> <input type='text' name='lastname' placeholder ='{$record['lastname']}'><br><br>";
+echo "<h1>Username:</h1> <input type='text' name='username' placeholder ='{$record['username']}'><br><br>";
+echo "<h1>E-mail:</h1> <input type='email' name='email' placeholder ='{$record['email']}'>";
+
+echo "<br><br><button type='submit' id='updateBtn'> Update </button>";
+echo "<button type='button' id='cancelBtn'> Cancel </button>";
+
+// echo "<button type='button' id='editBtn'> Edit </button>"; 
+
 echo "</form>";
 
   echo "</div>";
@@ -39,7 +44,7 @@ echo "</form>";
 echo "<h1 style='text-align:center; text-decoration:underline;> Your posts </h1>";
 
 if(mysqli_num_rows($posts_query) == 0)
-  echo "<h3 style='text-align:center'>You haven't posted yet!</h3>";
+  echo "<h3 style='text-align:center;'>You haven't posted yet!</h3>";
 
 while($record = mysqli_fetch_assoc($posts_query))
 {
@@ -60,5 +65,8 @@ else
 }
 mysqli_close($conn);
  ?>
+      <script src="../JS/jquery.js"></script>
+     <script src="../JS/bootstrap.min.js"></script>
+      <!-- <script src="../JS/view_profile.js"></script> -->
  </body>
  </html>
