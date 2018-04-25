@@ -1,4 +1,4 @@
-# Mini-Social-Media-Web-Application-Backed-Up-By-PHP
+<h1 align="center"> Mini-Social-Media </h1>
 
 **Basic Info**
 
