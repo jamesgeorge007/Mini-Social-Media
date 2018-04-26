@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jamesgeorge007/Mini-Social-Media.svg?branch=master)](https://travis-ci.org/jamesgeorge007/Mini-Social-Media)
+
 <h1 align="center"> Mini-Social-Media </h1>
 
 **Basic Info**
