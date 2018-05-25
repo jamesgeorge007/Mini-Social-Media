@@ -41,6 +41,6 @@ This is a basic social media web app where the users can create their accounts c
 * Reasearching... 
   
 
-> **Status**
+**Status**
 
 > Development stage.
