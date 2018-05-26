@@ -8,25 +8,33 @@
 <body>
 <?php
 session_start();    //Establishing the session
-$username=@$_SESSION['user'];
+$username = @$_SESSION['user'];
+$server = "localhost";
+$user = "root";
+$password = "";
+$dbname = "login";
 
+try{
 //Connecting to the MySQL database
 
-$conn=mysqli_connect("localhost","root","","login");
-$select = "SELECT * FROM credentials WHERE username='".$username."'";
-$count = "SELECT COUNT(*) FROM credentials";
-$posts = "SELECT * FROM posts";
+$conn = new PDO("mysql:host=$server;dbname=$dbname", $user, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$select = $conn->prepare("SELECT * FROM credentials WHERE username='{$username}'");
+$count = $conn->prepare("SELECT COUNT(*) FROM credentials");
+$posts = $conn->prepare("SELECT * FROM posts");
 
 //Executing queries
 
-$query1 = mysqli_query($conn, $select);
-$query2 = mysqli_query($conn, $count);
-$query3 = mysqli_query($conn, $posts);
+$select->execute();
+$count->execute();
+$posts->execute();
 
 //Fetching the results as an array
 
-$record1 = mysqli_fetch_assoc($query1);
-$record2 = mysqli_fetch_array($query2);
+$record1 = $select->fetch();
+$record2 = $count->fetch();
+$record3 = $posts->fetchAll();
 
 //Returning a dynamic page as per the use logged in.
 
@@ -100,28 +108,28 @@ echo "<div id='post'>";
 
 echo "<h1 id='posts_title'> Posts </h1>";
 
-if(mysqli_num_rows($query3)==0)
+if($posts->rowCount() == 0)
   echo "<br><center><h2>No posts yet.</h2></center>";
 
-while($record = mysqli_fetch_assoc($query3))
-{
+foreach($record3 as $record){
   echo "<div id='fetch_posts'>";
   echo "<h3>". $record['fullname']." </h3>";
   echo "<h2>".$record['title']."</h2>";
   echo "<p>".$record['body']."</p>";
   echo "</div>";
 }
-
-
 echo "</div>";
   }
   else
  {
   echo "<center>You must login to continue<br><br><a href='../index.html'>Login Here</a></center>";
  }
-
- mysqli_close($conn);
-
+ //Destroying the connection instance.
+ $conn = null;
+}
+catch(PDOException $e){
+  echo "Exception " . $e->getMessage();
+}
 ?>
 
 </body>
