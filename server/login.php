@@ -2,7 +2,7 @@
 session_start();
 $username=@$_POST['username'];
 $password=@$_POST['password'];
-$conn=mysqli_connect("localhost","root","","login");
+$conn=mysqli_connect("localhost","root","root","login");
 $select="SELECT * FROM credentials WHERE username='".$username."'";
 $query=mysqli_query($conn,$select);
 $record=mysqli_fetch_array($query);

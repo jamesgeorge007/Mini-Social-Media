@@ -9,7 +9,7 @@ if(@$_SESSION['user']!='')
   $body = @$_POST['body'];
 
 
-  $conn = mysqli_connect("localhost","root","","login");
+  $conn = mysqli_connect("localhost","root","root","login");
   $name_query = "SELECT fullname FROM credentials WHERE username='".$_SESSION['user']."' ";
   $result = mysqli_query($conn, $name_query);  
   $name = mysqli_fetch_array($result);

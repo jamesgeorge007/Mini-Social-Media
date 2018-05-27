@@ -1,28 +1,33 @@
 <?php
 session_start();
 
-if($_SESSION['user']!='')
-{
+if($_SESSION['user']!=''){
   $friends=$_POST['find_friends'];
+  $server = "localhost";
+  $user = "root";
+  $password = "root";
+  $dbname = "login";
+  try{
+  $conn = new PDO("mysql:host=$server;dbname=$dbname", $user, $password);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $conn=mysqli_connect("localhost","root","","login");
+  $query = $conn->prepare("SELECT * FROM credentials WHERE fullname='{$friends}' OR firstname='{$friends}'");
+  $query->execute();
 
-  $query = "SELECT * FROM credentials WHERE fullname='".$friends."' OR firstname='".$friends."'";
-  $fetch = mysqli_query($conn, $query);
+  $request = $conn->prepare("SELECT fullname FROM credentials WHERE username='{$_SESSION['user']}'");
+  $request->execute();
 
-  $request = "SELECT fullname FROM credentials WHERE username='".$_SESSION['user']."'";
-  $results = mysqli_query($conn, $request);
+  $posts_query = $conn->prepare("SELECT title, body FROM posts WHERE fullname='{$friends}' OR username='{$friends}'");
+  $posts_query->execute();
 
-  $posts_query = "SELECT title, body FROM posts WHERE fullname='".$friends."' OR username='".$friends."'";
-  $posts = mysqli_query($conn, $posts_query);
-
-  $array = mysqli_fetch_array($results);
+  $array = $request->fetchAll();
+  $posts = $posts_query->fetchAll();
 
   echo "<br><br>";
   
-  while($record = mysqli_fetch_array($fetch))
+  foreach($array as $record)
   {
-    if($friends == $array['fullname'])
+    if($friends == $record['fullname'])
     {
       echo "<h1><center>It's You!</center></h1><br><br>";
     }
@@ -36,11 +41,10 @@ if($_SESSION['user']!='')
   }
 
 
-if(mysqli_num_rows($posts) == 0)
+if($posts_query->rowCount == 0)
   echo "No posts yet.";
 
-while($record = mysqli_fetch_assoc($posts))
-{
+foreach($posts as $record){
   echo "<div id='posts'>";
 
   echo "<h2>".$record['title']."</h2>";
@@ -49,10 +53,8 @@ while($record = mysqli_fetch_assoc($posts))
 
   echo "</div>";
 }
-
+  }catch(PDOException $e){
+    echo $e->getMessage();
+  }
 }
-
-
-mysqli_close($conn);
-
 ?>

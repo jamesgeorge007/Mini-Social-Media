@@ -10,7 +10,7 @@
 session_start();
 if($_SESSION['user']!='')
 {
-$conn=mysqli_connect("localhost","root","","login");
+$conn=mysqli_connect("localhost","root","root","login");
 
 $select = "SELECT * FROM credentials WHERE username='".$_SESSION['user']."'";
 $query=mysqli_query($conn, $select);

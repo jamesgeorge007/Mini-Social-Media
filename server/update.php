@@ -4,7 +4,7 @@ session_start();
 
 if($_SESSION['user'] != '')
 {
-  $conn = mysqli_connect("localhost", "root", "", "login");
+  $conn = mysqli_connect("localhost", "root", "root", "login");
 
   $firstName = @$_POST['firstname'];
   $lastName = @$_POST['lastname'];

@@ -11,7 +11,7 @@ session_start();    //Establishing the session
 $username = @$_SESSION['user'];
 $server = "localhost";
 $user = "root";
-$password = "";
+$password = "root";
 $dbname = "login";
 
 try{

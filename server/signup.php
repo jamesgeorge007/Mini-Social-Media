@@ -7,7 +7,7 @@ $email=@$_POST['email'];
 {
   header('signup.php');
 } */
-$conn=mysqli_connect("localhost","root","","login");
+$conn=mysqli_connect("localhost","root","root","login");
 $select="INSERT INTO credentials(username, password, email) VALUES('".$username."','".$password."','".$email."')";
 $query=mysqli_query($conn,$select);
 mysqli_close($conn);
