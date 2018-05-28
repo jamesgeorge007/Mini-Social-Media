@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jamesgeorge007/Mini-Social-Media.svg?branch=master)](https://travis-ci.org/jamesgeorge007/Mini-Social-Media)
+[![Build Status](https://travis-ci.org/jamesgeorge007/Mini-Social-Media.svg?branch=master)](https://travis-ci.org/jamesgeorge007/Mini-Social-Media) [![GitHub issues](https://img.shields.io/github/issues/jamesgeorge007/Mini-Social-Media.svg)](https://github.com/jamesgeorge007/Mini-Social-Media/issues) [![GitHub forks](https://img.shields.io/github/forks/jamesgeorge007/Mini-Social-Media.svg)](https://github.com/jamesgeorge007/Mini-Social-Media/network) [![GitHub stars](https://img.shields.io/github/stars/jamesgeorge007/Mini-Social-Media.svg)](https://github.com/jamesgeorge007/Mini-Social-Media/stargazers) [![GitHub license](https://img.shields.io/github/license/jamesgeorge007/Mini-Social-Media.svg)](https://github.com/jamesgeorge007/Mini-Social-Media/blob/master/LICENSE)
 
 <h1 align="center"> Mini-Social-Media </h1>
 
