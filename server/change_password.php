@@ -18,8 +18,8 @@ if($_SESSION['user']!=''){
     $confirm = @$_POST['confirm_password'];
 
     $query = "SELECT password FROM credentials WHERE username='".$_SESSION['user']."'";
-    $fetch = mysqli_query($conn,$query);
-    $record = mysqli_fetch_assoc($fetch);
+    $query->execute();
+    $record = $query->fetch();
   
     if($current == $record['password']){
       if($new != $confirm){

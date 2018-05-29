@@ -8,20 +8,24 @@
 <body>
 <?php
 session_start();
-if($_SESSION['user']!='')
-{
-$conn=mysqli_connect("localhost","root","root","login");
+try{
+  $server = "localhost";
+  $user = "root";
+  $password = "root";
+  $dbname = "login";
+  $conn = new PDO("mysql:host=$server;dbname=$dbname", $user, $password);
+  if($_SESSION['user']!='') {
 
-$select = "SELECT * FROM credentials WHERE username='".$_SESSION['user']."'";
-$query=mysqli_query($conn, $select);
+  $select_query = "SELECT * FROM credentials WHERE username='".$_SESSION['user']."'";
+  $select_query->execute();
+  $result = $select_query->fetchAll();
 
-$posts = "SELECT title, body FROM posts WHERE username='".$_SESSION['user']."'";
-$posts_query = mysqli_query($conn, $posts);
+  $posts_query = "SELECT title, body FROM posts WHERE username='".$_SESSION['user']."'";
+  $posts_query->execute(); 
 
-echo "<h1 style='text-align:center; text-decoration:underline;'>Your Profile</h1> <br><br>";
+  echo "<h1 style='text-align:center; text-decoration:underline;'>Your Profile</h1> <br><br>";
 
-while($record = mysqli_fetch_array($query))
-  {
+foreach($result as $record) {
     echo "<div id='user-details'>";
 
 echo "<form method='post' action='update.php'>";
@@ -43,11 +47,10 @@ echo "</form>";
 
 echo "<h1 style='text-align:center; text-decoration:underline;> Your posts </h1>";
 
-if(mysqli_num_rows($posts_query) == 0)
+if($posts_query->rowCount == 0)
   echo "<h3 style='text-align:center;'>You haven't posted yet!</h3>";
 
-while($record = mysqli_fetch_assoc($posts_query))
-{
+foreach($posts as $record) {
   echo "<div id='posts'>";
 
   echo "<h2>".$record['title']."</h2>";
@@ -59,11 +62,12 @@ while($record = mysqli_fetch_assoc($posts_query))
 
 echo "<br><center><a href='../HTML/change_password.html'><button type='button'>Change Password</button></a></center>";
 }
-else
-{
+else {
  header('location:profile.php');
+} }catch(PDOException $e){
+  echo $e->getMessage();
 }
-mysqli_close($conn);
+$conn = null;
  ?>
       <script src="../JS/jquery.js"></script>
      <script src="../JS/bootstrap.min.js"></script>
