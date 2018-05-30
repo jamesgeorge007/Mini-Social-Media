@@ -20,7 +20,7 @@ This is a basic social media web app where the users can create their accounts c
 
 **Database Schema**
 
-![image](https://github.com/jamesgeorge007/Mini-Social-Media/tree/master/templates/assets/images/Database%20Schema)
+![image](https://github.com/jamesgeorge007/Mini-Social-Media/blob/master/templates/assets/images/Database%20Schema/DB.JPG)
 
 **Implemented features**
 
