@@ -1,30 +1,34 @@
 <?php
 session_start();
 
-if(@$_SESSION['user']!='')
-{
+try{
+  if(@$_SESSION['user']!='')
+  {
+    $server = "localhost";
+    $user = "root";
+    $password = "root";
+    $dbname = "login";
+    $username = @$_SESSION['user'];
+    $title = @$_POST['title'];
+    $body = @$_POST['body'];
 
-  $user = @$_SESSION['user'];
-  $title = @$_POST['title'];
-  $body = @$_POST['body'];
+    $conn = new PDO("mysql:host=$server;dbname=$dbname", $user, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $query = $conn->prepare("SELECT fullname FROM credentials WHERE username='".$_SESSION['user']."' ");
+    $query->execute();
+    $name = $query->fetch();
+    $insert_query=$conn->prepare("INSERT INTO posts VALUES ('".$title."', '".$body."', '".$username."', '".$name[0]."')");
+    $insert_query->execute();
 
+    $_SESSION['successful_post'] = true;
 
-  $conn = mysqli_connect("localhost","root","root","login");
-  $name_query = "SELECT fullname FROM credentials WHERE username='".$_SESSION['user']."' ";
-  $result = mysqli_query($conn, $name_query);  
-  $name = mysqli_fetch_array($result);
-  $query="INSERT INTO posts VALUES ('".$title."', '".$body."', '".$user."', '".$name[0]."')";
-  mysqli_query($conn, $query);
-  mysqli_close($conn);
-
-  @$_SESSION['successful_post'] = true;
-
- header('location: profile.php');
+    header('location: profile.php'); 
+    } else {
+      echo "<center>You must login to continue<br><br><a href='../HTML/index.html'>Login Here</a></center>";
+      }
+    $conn = null;  
+} catch(PDOException $e){
+        echo $e->getMessage();
 }
-else
- {
-  echo "<center>You must login to continue<br><br><a href='../HTML/index.html'>Login Here</a></center>";
- }
-
 
  ?>

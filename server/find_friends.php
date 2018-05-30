@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if($_SESSION['user']!=''){
-  $friends=$_POST['find_friends'];
+if($_SESSION['user'] != ''){
+  $friends = $_POST['find_friends'];
   $server = "localhost";
   $user = "root";
   $password = "root";
@@ -11,13 +11,13 @@ if($_SESSION['user']!=''){
   $conn = new PDO("mysql:host=$server;dbname=$dbname", $user, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $query = $conn->prepare("SELECT * FROM credentials WHERE fullname='{$friends}' OR firstname='{$friends}'");
+  $query = $conn->prepare("SELECT * FROM credentials WHERE fullname='".$friends."' OR firstname='".$friends."'");
   $query->execute();
 
-  $request = $conn->prepare("SELECT fullname FROM credentials WHERE username='{$_SESSION['user']}'");
+  $request = $conn->prepare("SELECT fullname FROM credentials WHERE username='".$_SESSION['user']."'");
   $request->execute();
 
-  $posts_query = $conn->prepare("SELECT title, body FROM posts WHERE fullname='{$friends}' OR username='{$friends}'");
+  $posts_query = $conn->prepare("SELECT title, body FROM posts WHERE fullname='".$friends."' OR username='".$friends."'");
   $posts_query->execute();
 
   $array = $request->fetchAll();
@@ -41,7 +41,7 @@ if($_SESSION['user']!=''){
   }
 
 
-if($posts_query->rowCount == 0)
+if($posts_query == null)
   echo "No posts yet.";
 
 foreach($posts as $record){
@@ -53,7 +53,8 @@ foreach($posts as $record){
 
   echo "</div>";
 }
-  }catch(PDOException $e){
+  $conn = null;
+  } catch(PDOException $e){
     echo $e->getMessage();
   }
 }

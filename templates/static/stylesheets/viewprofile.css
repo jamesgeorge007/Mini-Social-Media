@@ -1,0 +1,49 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+body {
+    background: rgb(217, 217, 217);
+}
+
+#user-details {
+    background-color: #293;
+    width: 35%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+    border: 6px solid #fff;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Franklin';
+}
+
+#user-details>form>input {
+    padding: 8px;
+    border-radius: 8px;
+    border-width: thin;
+    font-size: 32px;
+    background-color: #fff;
+    color: #000;
+}
+
+#user-details>form>button {
+    margin: 5px;
+    padding: 5px;
+    font-size: 30px;
+    width: 35%;
+    border-radius: 14px;
+}
+
+#user-details>form>buttons:hover {
+    background-color: #fff;
+}
+
+#posts {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}

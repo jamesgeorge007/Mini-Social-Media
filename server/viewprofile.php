@@ -2,8 +2,8 @@
 <head>
 
 
-    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="../stylesheets/viewprofile.css">
+    <link rel="stylesheet" href="../templates/static/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../templates/static/stylesheets/viewprofile.css">
 </head>
 <body>
 <?php
@@ -14,13 +14,13 @@ try{
   $password = "root";
   $dbname = "login";
   $conn = new PDO("mysql:host=$server;dbname=$dbname", $user, $password);
-  if($_SESSION['user']!='') {
+  if($_SESSION['user'] != '') {
 
-  $select_query = "SELECT * FROM credentials WHERE username='".$_SESSION['user']."'";
+  $select_query = $conn->prepare("SELECT * FROM credentials WHERE username='".$_SESSION['user']."'");
   $select_query->execute();
   $result = $select_query->fetchAll();
 
-  $posts_query = "SELECT title, body FROM posts WHERE username='".$_SESSION['user']."'";
+  $posts_query = $conn->prepare("SELECT title, body FROM posts WHERE username='".$_SESSION['user']."'");
   $posts_query->execute(); 
 
   echo "<h1 style='text-align:center; text-decoration:underline;'>Your Profile</h1> <br><br>";
@@ -47,7 +47,7 @@ echo "</form>";
 
 echo "<h1 style='text-align:center; text-decoration:underline;> Your posts </h1>";
 
-if($posts_query->rowCount == 0)
+if($posts_query == null)
   echo "<h3 style='text-align:center;'>You haven't posted yet!</h3>";
 
 foreach($posts as $record) {
@@ -60,17 +60,17 @@ foreach($posts as $record) {
   echo "</div>";
 }
 
-echo "<br><center><a href='../HTML/change_password.html'><button type='button'>Change Password</button></a></center>";
+echo "<br><center><button type='button' onClick='window.location=../templates/change_password.html'>Change Password</button></center>";
 }
 else {
- header('location:profile.php');
-} }catch(PDOException $e){
+ header('location: profile.php');
+} $conn = null; 
+}catch(PDOException $e){
   echo $e->getMessage();
 }
-$conn = null;
  ?>
-      <script src="../JS/jquery.js"></script>
-     <script src="../JS/bootstrap.min.js"></script>
-      <script src="../JS/viewProfile.js"></script> 
+      <script src="../templates/static/JS/jquery.js"></script>
+     <script src="../templates/static/JS/bootstrap.min.js"></script>
+      <script src="../templates/static/JS/viewProfile.js"></script> 
  </body>
  </html>

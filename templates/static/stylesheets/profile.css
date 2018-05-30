@@ -1,0 +1,131 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #fff;
+}
+
+div.collapse {
+    display: inline-block;
+    background-color: maroon;
+    padding: 5px;
+    color: white;
+}
+
+div.collapse>form>button {
+    padding: 5px;
+}
+
+div.collapse>form>input {
+    padding: 5px;
+}
+
+.jumbotron {
+    height: 100%;
+    padding: 10px;
+    margin-top: -120px;
+}
+
+#post {
+    text-align: left;
+    border: 5px solid maroon;
+    border-radius: 8px;
+    height: 380px;
+    width: 90%;
+    margin: -50 auto;
+    padding: 30px;
+}
+
+form#opinion>textarea {
+    border-radius: 12px;
+    width: 350px;
+    padding: 12px;
+    font-size: 24px;
+}
+
+form#opinion>textarea:focus {
+    -webkit-transition-duration: 1s;
+    border-radius: 16px;
+    width: 100%;
+    border-width: medium;
+    border-color: limegreen;
+}
+
+form#opinion>input {
+    padding: 18px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+form#opinion>input:focus {
+    -webkit-transition-duration: 0.4s;
+    border-width: medium;
+    border-color: limegreen;
+}
+
+form#opinion>button[type='submit'] {
+    padding: 10px;
+    font-size: 30px;
+}
+
+form#opinion>button[type='reset'] {
+    padding: 10px;
+    font-size: 30px;
+}
+
+form#opinion>button:hover {
+    cursor: pointer;
+}
+
+#fetch_posts {
+    text-align: center;
+    width: 75%;
+    margin: 80px auto;
+    padding: 25px;
+    border: 8px solid #623;
+    background-color: rgba(216, 216, 216, 0.8);
+    border-radius: 6px;
+    box-shadow: 8px 12px rgb(210, 198, 222);
+}
+
+#fetch_posts>h2 {
+    padding: 10px;
+    background-color: #192;
+    color: #fff;
+    text-shadow: 3px 3px #000;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#fetch_posts>p {
+    padding: 10px;
+    font-family: monospace;
+    background-color: rgb(192, 192, 192);
+    font-size: 30px;
+    text-align: initial;
+}
+
+#fetch_posts>h3 {
+    text-align: center;
+    font-family: 'Helevetica';
+    margin-bottom: 40px;
+    font-size: 35px;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 25%;
+}
+
+#posts_title {
+    text-align: center;
+    color: #192;
+    font-family: 'arial';
+    font-size: 85px;
+    text-decoration: underline;
+    text-shadow: 4px 2px rgb(67, 183, 204);
+}

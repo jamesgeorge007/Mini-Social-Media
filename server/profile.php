@@ -36,7 +36,7 @@ $record1 = $select->fetch();
 $record2 = $count->fetch();
 $record3 = $posts->fetchAll();
 
-//Returning a dynamic page as per the use logged in.
+//Returning a dynamic page as per the user logged in.
 
 if(@$_SESSION['user']!="")
  {
@@ -74,7 +74,7 @@ echo "</div>";
 if(@$_SESSION['successful_post'])
 {
   echo "<script>alert('Successfully posted!!');</script>";
-  @$_SESSION['successful_post'] = false;
+  $_SESSION['successful_post'] = false;
 }
 
 
@@ -108,7 +108,7 @@ echo "<div id='post'>";
 
 echo "<h1 id='posts_title'> Posts </h1>";
 
-if($posts->rowCount() == 0)
+if($posts == null)
   echo "<br><center><h2>No posts yet.</h2></center>";
 
 foreach($record3 as $record){
