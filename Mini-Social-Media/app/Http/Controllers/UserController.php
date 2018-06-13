@@ -23,6 +23,12 @@ class UserController extends Controller
 
     public function signUp(Request $request)
     {
+        $this->validate($request, [
+            'email' => 'required|email|unique:users',
+            'first_name' => 'required|max:12',
+            'password' => 'required|min:5'
+        ]);
+
         $email = $request['email'];
         $first_name = $request['first_name'];
         $password = bcrypt($request['password']);
