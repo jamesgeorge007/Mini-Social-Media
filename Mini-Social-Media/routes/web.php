@@ -29,3 +29,8 @@ Route::get('/dashboard', [
     'uses' => 'UserController@getDashboard',
     'as' => 'dashboard'
 ]);
+
+Route::post('/createpost', [
+    'uses' => 'PostController@CreatePost',
+    'as' => 'createpost'
+]);
