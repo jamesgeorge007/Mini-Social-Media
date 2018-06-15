@@ -7,10 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function getDashboard()
-    {
-        return view('dashboard');
-    }
     public function signIn(Request $request)
     {
         if(Auth::attempt(['email' => $request['email'], 'password' => $request['password']])){
@@ -43,6 +39,12 @@ class UserController extends Controller
         Auth::login($user);
 
         return redirect()->route('dashboard');
+    }
+
+    public function logOut()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }
 ?>
