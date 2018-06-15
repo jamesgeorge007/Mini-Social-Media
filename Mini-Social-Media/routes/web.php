@@ -34,3 +34,8 @@ Route::post('/createpost', [
     'uses' => 'PostController@CreatePost',
     'as' => 'createpost'
 ]);
+
+Route::get('/deletepost/{post_id}', [
+    'uses' => 'PostController@DeletePost',
+    'as' => 'deletepost'
+]);
