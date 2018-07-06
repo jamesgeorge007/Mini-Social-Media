@@ -15,6 +15,6 @@ Mini Social Networking platform backed up by Laravel and MySQL.
 
 - [x] User Authentication
 - [x] Create Posts
-- [o] Edit Posts
-- [o] Delete Posts
+- [ ] Edit Posts
+- [ ] Delete Posts
 - [x] Home Feed
